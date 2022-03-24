@@ -6,7 +6,7 @@ pipeline {
           stage ('Email notification') {
             steps {
                     echo '>>> Send New application build notification'
-                    //mail bcc: '', body: 'Thanks', cc: '', from: '', replyTo: '', subject: "New Build # [$BUILD_NUMBER] triggered for Job [$JOB_NAME]", to: 'khaled.amrosy.fci@gmail.com'
+                    //mail bcc: '', body: 'Thanks', cc: '', from: '', replyTo: '', subject: "New Build # [$BUILD_NUMBER] triggered for Job [$JOB_NAME]", to: 'baatou.ghassen@gmail.com'
                     mail bcc: '', body: """Dears,
                     A new build has been started for the Job [$JOB_NAME].
                     Below are the Build details:
@@ -31,7 +31,7 @@ pipeline {
     stage('SCM Checkout') {
       steps {
         echo '>>> Start getting SCM code'
-        git 'https://github.com/khalednoh/demo1.git'
+        git 'https://github.com/ghassenbt/demo1.git'
         echo '>>> End getting SCM code'
       }
     }
@@ -90,10 +90,10 @@ pipeline {
 
   }
   environment {
-    MyDockerAccountName = 'khalednoh'
+    MyDockerAccountName = 'ghassenbt'
     MyDockerReposioryName = 'pipeline-demo'
     MyTagName = 'Jenkins-pipeline-Demo'
-    emailRecipientIDs='khaled.amrosy.fci@gmail.com'
+    emailRecipientIDs='baatout.ghassen@gmail.com'
     slackChannelName = '#pipeline-demo'
     slackTeamDomainName = 'pipeline-demo'
   }
